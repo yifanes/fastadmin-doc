@@ -39,11 +39,12 @@ Less (可选,用于编辑less文件,如果你需要增改css样式，最好安�
 	`php think install`
 
 ## **常见问题**
-1. 执行`php think install`时出现`Access denied for user ...`，请确保数据库服务器、用户名、密码配置正确
-2. 执行`php think install`时报不是内部或外部命令? 请将php.exe所在的目录路径加入到环境变量PATH中
+1. 提示`请先下载完整包覆盖后再安装`，说明你是直接从仓库下载的代码，请从附件或群共享中下载完整包覆盖后再进行安装
+2. 执行`php think install`时出现`Access denied for user ...`，请确保数据库服务器、用户名、密码配置正确
+3. 执行`php think install`时报不是内部或外部命令? 请将php.exe所在的目录路径加入到环境变量PATH中
 
 * * * * *
-遇到问题到[论坛](http://forum.fastadmin.net) 反馈
+遇到问题到[论坛](http://forum.fastadmin.net) 或QQ群：[636393962](https://jq.qq.com/?_wv=1027&k=487PNBb) 反馈
 
 
 

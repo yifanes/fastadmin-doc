@@ -13,7 +13,7 @@ FastAdmin可通过命令控制台快速的一键生成CRUD，操作非常简单�
 
 >如果需要生成带目录层级的控制器则可以使用-c参数，例如`php think crud -t test -c mydir/test`，如此test控制器将在文件夹`mydir`目录下
 
->FastAdmin已经支持多表生成CRUD,请配置-o参数即可,更多参数请使用`php think crud --help`查看
+>FastAdmin已经支持多表生成CRUD,请配置-r参数即可,更多参数请使用`php think crud --help`查看
 
 常见问题：
 
@@ -41,7 +41,7 @@ FastAdmin可通过命令控制台快速的一键生成后台的权限节点，�
 
 常见问题:
 1. 在使用`php think menu`前确保你的控制器已经添加或通过`php think crud`生成好
-2. 如果之前已经生成了菜单,需要再次生成,请登录后台手动删除之前生成的菜单
+2. 如果之前已经生成了菜单,需要再次生成,请登录后台手动删除之前生成的菜单或使用`php think menu -c 控制器名 -d 1`来删除
 
 使用范例：
 
