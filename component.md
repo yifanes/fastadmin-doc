@@ -7,7 +7,7 @@ order: 8
 ## 又拍云上传
 
 FastAdmin支持将文件或图片直传至又拍云服务器而不需要通过本地服务器进行中转
-在使用又拍云上传功能之前请先到又拍云注册一个账号并新增一个云储存服务，又拍云地址是http://www.upyun.com?ref=fastadmin
+在使用又拍云上传功能之前请先到又拍云注册一个账号并新增一个云储存服务，又拍云地址是https://console.upyun.com/register/?invite=SyAt3ehQZ
 当创建好服务后获取到相应的配置信息
 修改`/application/extra/upload.php` 文件，修改其中的配置
 
