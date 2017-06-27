@@ -45,7 +45,7 @@ order: 10
 
 ## 报告BUG
 
-当你在使用过程中遇到问题，请查阅 [常见问题](faq.html) 或者在 [FastAdmin交流社区](http://www.fastadmin.net) 提交你的问题。
+当你在使用过程中遇到问题，请查阅 [常见问题](faq.html) 或者在 [FastAdmin交流社区](http://forum.fastadmin.net) 提交你的问题。
 
 
 

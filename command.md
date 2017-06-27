@@ -17,10 +17,8 @@ FastAdmin可通过命令控制台快速的一键生成CRUD，操作非常简单�
 
 常见问题：
 
-1. 数据库中的表必须带有带前缀
-2. 使用`php think crud -t test`时是不需要表前缀
-3. 如果你的表带有下划级会自动生成带层级的控制器和视图，如果你不希望生成带层级的控制器和视图，请使用-c 参数，例如：`php think crud -t test_log -c testlog`将会生成testlog这个控制器，同理如果你的普通表想生成带层级的控制器则可以使用`php think crud -t test -c mydir/test`
-4. FastAdmin自带一个fa_test表用于测试CRUD能支持的字段名称和类型，请直接使用`php think crud -t test`生成查看
+1. 如果你的表带有下划级会自动生成带层级的控制器和视图，如果你不希望生成带层级的控制器和视图，请使用-c 参数，例如：`php think crud -t test_log -c testlog`将会生成testlog这个控制器，同理如果你的普通表想生成带层级的控制器则可以使用`php think crud -t test -c mydir/test`
+2. FastAdmin自带一个fa_test表用于测试CRUD能支持的字段名称和类型，请直接使用`php think crud -t test`生成查看
 
 使用范例：
 
