@@ -10,7 +10,7 @@ FastAdmin目录结构如下：
 FastAdmin项目目录
 ├── application
 │   ├── admin
-│   │   ├── command			//新增控制台命令
+│   │   ├── command			//控制台命令
 │   │   ├── controller
 │   │   ├── lang
 │   │   │   ├── zh-cn			//控制器对应语言包,按需加载
@@ -91,7 +91,9 @@ FastAdmin项目目录
 │   │   ├── libs			//Bower资源包位置
 │   │   └── less			//Less资源目录
 │   └── uploads				//上传文件目录
-│   ├── index.php
+│   ├── index.php                       //应用入口主文件
+│   ├── install.php                     //FastAdmin安装引导
+│   ├── admin.php                       //后台入口文件,强烈建议修改
 │   ├── robots.txt
 │   └── router.php
 ├── runtime						
