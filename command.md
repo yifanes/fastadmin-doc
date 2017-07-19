@@ -11,6 +11,8 @@ FastAdmin可通过命令控制台快速的一键生成CRUD，操作非常简单�
 2. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
 3. 执行`php think crud -t test`即可一键生成test表的CRUD
 
+>Windows系统一键生成CRUD请使用cmd命令控制台
+
 >如果需要生成带目录层级的控制器则可以使用-c参数，例如`php think crud -t test -c mydir/test`，如此test控制器将在文件夹`mydir`目录下
 
 >FastAdmin已经支持多表生成CRUD,请配置-r参数即可,更多参数请使用`php think crud --help`查看
@@ -35,6 +37,8 @@ FastAdmin可通过命令控制台快速的一键生成后台的权限节点，�
 3. 执行`php think menu -c test`即可生成Test控制器的权限节点
 4. 如果想一键重置全部权限节点，可调用`php think menu -c all-controller`即可根据控制器一键重新生成后台的全部权限节点
 
+>Windows系统一键生成菜单请使用cmd命令控制台
+
 >如果你的控制器还有层级关系，比如你的test控制器位于mydir之下，则在生成菜单时使用`php think menu -c mydir/test`来生成
 
 常见问题:
@@ -57,6 +61,8 @@ FastAdmin采用的是基于`RequireJS`的r.js进行JS和CSS文件的压缩打包
 2. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
 3. 执行`php think min -m all -r all`即可执行前后台的JS和CSS压缩打包， `-m all`表示前后模块均压缩 `-r all`表示CSS和JS均压缩
 4. 参数可自由搭配，例如`php think min -m backend -r css`表示仅压缩后台的CSS文件
+
+>Windows系统一键压缩打包JS、CSS文件请使用cmd命令控制台
 
 JS和CSS文件压缩前和压缩后浏览器请求对比(请右键查看大图)：
 
