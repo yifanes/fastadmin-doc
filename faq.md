@@ -6,6 +6,10 @@ order: 9
 
 如果你在使用FastAdmin的过程中发现任何问题,请到论坛发贴: http://forum.fastadmin.net
 
+## 安装后提示控制器不存在:E或控制器不存在:N
+
+出现这种情况一般是由于Web服务器的PATH_INFO未配置正确，导致服务器接收到了错误的PATH_INFO值，请检查你的PATH_INFO并修复后再重试
+
 ## FastAdmin的数据库SQL文件在哪里
 
 FastAdmin在安装时会自动创建数据库和数据表,免除了你手动创建数据库和导入数据库的烦恼。
@@ -224,6 +228,7 @@ top.window.Backend.api.sidebar({
 
 在FastAdmin中压缩打包JS和CSS文件需要NodeJS的支持
 在Windows下需要手动配置Node的可执行文件,请修改`/application/admin/command/Min.php`中`$nodeExec`的值
+如你的Node可执行文件是`C:/Program Files/nodejs/node.exe`，则请配置`$nodeExec = '"C:/Program Files/nodejs/node.exe"'`;
 
 
 ## 提示未知的数据格式或网络错误
