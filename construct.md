@@ -9,6 +9,7 @@ FastAdmin目录结构如下：
 ~~~ javascript
 FastAdmin项目目录
 ├── application
+│   ├── addons                          //插件扩展目录
 │   ├── admin
 │   │   ├── command			//控制台命令
 │   │   ├── controller
@@ -37,19 +38,12 @@ FastAdmin项目目录
 │   │   │   ├── Api.php			//Api基类
 │   │   │   ├── Backend.php		//后台基类
 │   │   │   ├── Frontend.php            //前台基类
-│   │   │   └── Uc.php			//Ucenter基类
 │   │   ├── library
-│   │   │   ├── Auth.php		//前台权限验证类
-│   │   │   └── Token.php		//前台Token类
 │   │   ├── model
 │   │   └── view
 │   ├── extra
-│   │   ├── payment.php			//支付配置
-│   │   ├── service.php			//第三方服务配置
 │   │   ├── site.php			//站点配置
-│   │   ├── third.php			//第三方登录配置
 │   │   ├── upload.php			//上传配置
-│   │   └── wechat.php			//微信配置
 │   ├── index
 │   │   ├── controller
 │   │   ├── lang
@@ -63,13 +57,8 @@ FastAdmin项目目录
 │   ├── database.php
 │   ├── route.php
 │   ├── tags.php
-│   └── uc.php				//UC常量
 ├── extend
 │   └── fast
-│       ├── payment			//微信支付宝类
-│       ├── service			//第三方服务扩展
-│       ├── third			//第三方登录类
-│       ├── ucenter			//Ucenter文件夹
 │       ├── Auth.php			//Auth权限验证类
 │       ├── Date.php			//日期类
 │       ├── Form.php			//表单元素生成类
