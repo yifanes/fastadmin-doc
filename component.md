@@ -30,7 +30,7 @@ FastAdmin中的动态列表使用的是优秀强大的Selectpage插件来支持�
 
 ## 富文本编辑器
 
-FastAdmin的富文本编辑器只需要给对应的textarea增加一个class为`editor`即可，FastAdmin在渲染时即会将textarea渲染为富文本编辑器，目前支持`summernote`和`wangeditor`富文本编辑器
+FastAdmin的富文本编辑器只需要给对应的textarea增加一个class为`editor`即可，FastAdmin在渲染时即会将textarea渲染为富文本编辑器，目前支持`summernote`和`wangeditor`富文本编辑器，需安装对应的插件
 
 ## 表单元素生成
 

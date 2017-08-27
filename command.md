@@ -64,9 +64,29 @@ FastAdmin采用的是基于`RequireJS`的r.js进行JS和CSS文件的压缩打包
 
 >Windows系统一键压缩打包JS、CSS文件请使用cmd命令控制台
 
+常见问题:
+1. 在使用`php think min`前确保你已经安装好nodejs环境
+2. Windows系统需要手动配置node的路径,请参考[](http://doc.fastadmin.net/docs/faq.html#在Windows下如何压缩打包JS和CSS)
+
 JS和CSS文件压缩前和压缩后浏览器请求对比(请右键查看大图)：
 
 ![JS和CSS文件压缩前和压缩后浏览器请求对比](http://wx2.sinaimg.cn/large/718e40a3gy1ffjoe5t6dej21e010h7lu.jpg)
 
 更多一键生成JS和CSS的参数请使用`php think min --help`查看
+
+
+## 一键管理插件
+
+FastAdmin中的插件可以通过命令行快速的进行安装、卸载、禁用和启用。
+
+1. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
+2. 执行`php think addon -a example -c install`即可一键安装开发者示例，example是插件标识 install是操作动作，-c 参数支持`install/uninstall/enable/disable`。
+
+>Windows系统一键管理插件请使用cmd命令控制台
+
+常见问题:
+1. 请确保你的FastAdmin已经能正常登录后台
+2. 付费插件请直接在后台`插件管理`或FastAdmin官方[插件市场](http://www.fastadmin.net/store.html)，下载然后进行离线安装
+
+更多一键管理插件的参数请使用`php think addon --help`查看
 
