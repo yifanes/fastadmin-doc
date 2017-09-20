@@ -46,6 +46,8 @@ Less (可选,用于编辑less文件,如果你需要增改css样式，最好安�
 3. 执行`php think install`时出现`Access denied for user ...`，请确保数据库服务器、用户名、密码配置正确
 4. 执行`php think install`时报不是内部或外部命令? 请将php.exe所在的目录路径加入到环境变量PATH中
 5. 使用命令行安装时可能会由于你所处的网络环境导致资源下载不完整，请下载完整包覆盖后再尝试安装。
+6. 如果提示`当前权限不足，无法写入配置文件application/database.php`，请检查`database.php`是否可读，还有可能是当前安装程序无法访问父目录，请检查PHP的`open_basedir`配置
+7. 如果提示`找不到fastadmin.fa_admin`表或表不存在，请检查你的MySQL是否开启了支持innodb。
 
 * * * * *
 遇到问题到[论坛](http://forum.fastadmin.net) 或QQ群：[636393962](https://jq.qq.com/?_wv=1027&k=487PNBb) 反馈

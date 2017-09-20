@@ -41,6 +41,8 @@ FastAdmin的数据库安装文件保存在
 `颜色标识`总共有 `black/black-light/blue/blue-light/green/green-light/purple/purple-light/red/red-light/yellow/yellow-light`总12个颜色标识
 如果需要一次性加载全部的皮肤样式，则把`skin-green`改为`_all-skins`即可
 
+3.最后修改`application/admin/views/index/index.html`中第6行，将`skin-green`换成你需要的颜色标识
+
 ## php think install报不是内部或外部命令
 
 这是由于php.exe文件所在目录未加入到PATH环境变量导致的
