@@ -247,3 +247,12 @@ top.window.Backend.api.sidebar({
 修复错误后再重试即可
 
 FastAdmin建议运行在PHP5.5及以上版本，因此如果提示网络错误请检查你的PHP是否低于该版本
+
+## 如何将静态资源采用CDN方式部署到又拍云或七牛云
+
+FastAdmin可以将静态的资源部署到又拍云或七牛云，可大大的加快网站的访问。
+默认FastAdmin的静态资源是不采用CDN部署的，如果需要启用，需要修改以下两个文件的配置
+1.修改`application/extra/site.php`中`cdnurl`的值为你CDN的地址
+2.修改`application/config.php`中`__CDN__`的值为你CDN的地址
+请将你的静态资源`public/assets`文件夹上传至你的CDN空间中去。
+如果你需要将上传的文件直传至又拍云或七牛云，请在扩展管理中下载对应的插件并配置好即可。
