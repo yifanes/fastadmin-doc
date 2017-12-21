@@ -4,7 +4,7 @@ type: docs
 order: 7
 ---
 
-##基础介绍
+## 基础介绍
 
 FastAdmin的前端部分使用或涉及到主要是`RequireJS`,`jQuery`,`AdminLTE`,`Bower`,`Less`,`CSS`，其中
 

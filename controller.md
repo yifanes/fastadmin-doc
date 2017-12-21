@@ -304,7 +304,7 @@ public function index()
 然后在控制器中添加以下代码：
 
 ```php
-public function admin()
+public function category()
 {
 	return $this->belongsTo('Category', 'category_id')->setEagerlyType(0);
 }
