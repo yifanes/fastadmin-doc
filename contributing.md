@@ -18,14 +18,18 @@ order: 10
 **操作流程**
 
 1. 首先Fork [karsonzhang/fastadmin](https://github.com/karsonzhang/fastadmin)(Github) 或 [karson/fastadmin](https://git.oschina.net/karson/fastadmin)(码云)
+
 2. 然后Clone 到你本地：
     ```
     git clone https://github.com/<yourname>/fastadmin.git
     或
     git clone https://git.oschina.net/<yourname>/fastadmin.git
     ```
+
 3. 编写代码并提交
+
 4. Push 到你的分支
+
 5. 创建 `Pull Request` 并描述你完成的功能或者做出的修改。
 
 ## 更新文档

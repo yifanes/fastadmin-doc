@@ -115,7 +115,7 @@ blog
 
 `config.php`这个文件是插件的配置文件，我们在后台插件管理中点`配置按钮`时会保存在此文件，此文件的内容格式为：
 
-```
+```php
 <?php
 
 return [
@@ -201,25 +201,25 @@ COMMIT;
 
 FastAdmin中的行为支持ThinkPHP5的所有行为，同时FastAdmin自定义部分专属的行为事件，以下是所有所支持的行为事件
 
-标签位 | 描述 | 类型说明
---- | --- | --- 
-app_init|	应用初始化标签位 | 系统
-app_begin| 应用开始标签位 | 系统
-module_init| 模块初始化标签位 | 系统
-action_begin|	控制器开始标签位 | 系统
-view_filter| 视图输出过滤标签位 | 系统
-app_end| 应用结束标签位 | 系统
-log_write| 日志write方法标签位 | 系统
-log_write_done| 日志写入完成标签位 | 系统
-response_end|	 输出结束标签位 | 系统
-response_send| 响应发送标签位 | 系统
-upload_after| 上传成功标签位 | FastAdmin
-login_init| 登录标签位 | FastAdmin
-wipecache_after| 清除缓存后标签位 | FastAdmin
-admin_nologin| 管理员未登录标签位 | FastAdmin
-admin_nopermission| 管理员无权限标签位 | FastAdmin
-upload_config_init| 上传配置标签位 | FastAdmin
-config_init| 系统配置标签位 | FastAdmin
+| 标签位                | 描述           | 类型说明      |
+| ------------------ | ------------ | --------- |
+| app_init           | 应用初始化标签位     | 系统        |
+| app_begin          | 应用开始标签位      | 系统        |
+| module_init        | 模块初始化标签位     | 系统        |
+| action_begin       | 控制器开始标签位     | 系统        |
+| view_filter        | 视图输出过滤标签位    | 系统        |
+| app_end            | 应用结束标签位      | 系统        |
+| log_write          | 日志write方法标签位 | 系统        |
+| log_write_done     | 日志写入完成标签位    | 系统        |
+| response_end       | 输出结束标签位      | 系统        |
+| response_send      | 响应发送标签位      | 系统        |
+| upload_after       | 上传成功标签位      | FastAdmin |
+| login_init         | 登录标签位        | FastAdmin |
+| wipecache_after    | 清除缓存后标签位     | FastAdmin |
+| admin_nologin      | 管理员未登录标签位    | FastAdmin |
+| admin_nopermission | 管理员无权限标签位    | FastAdmin |
+| upload_config_init | 上传配置标签位      | FastAdmin |
+| config_init        | 系统配置标签位      | FastAdmin |
 
 使用行为时在`Blog.php`中添加上对应的方法，FastAdmin在安装时、禁用、启用即可自动注册行为。但一定请注意在`Blog.php`中编写行为方法是使用的是驼峰式规则，例如`upload_after`，方法名则为`uploadAfter`，如果方法名使用`upload_after`则不会注册成功
 

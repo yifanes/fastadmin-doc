@@ -23,7 +23,7 @@ FastAdmin支持将文件或图片直传至第三方云存储服务器而不需�
 
 FastAdmin中的动态列表使用的是优秀强大的Selectpage插件来支持，FastAdmin对其进行大量的二次开发和改良。
 下面介绍一个最基础的动态下拉列表示例，如下
-```
+```html
 <input id="c-name" data-rule="required" data-source="category/selectpage" class="form-control selectpage" name="row[name]" type="text" value="">
 ```
 其中需要给元素class添加一个`selectpage`，其次需要增加一个`data-source="category/selectpage"`这个属性，`category/selectpage`为我们控制器提交列表的方法，更多的使用方法请参考[Selectpage官方教程](https://terryz.github.io/)
@@ -47,7 +47,7 @@ FastAdmin封装了几个常用的方法，可以快速的生成表单元素，
 ```
 {:build_radios('row[enforce]', [1=>"是", 0=>"否"], 1);}
 ```
- 
+
 3. 生成复选按钮组build_checkboxs
 
 ```
