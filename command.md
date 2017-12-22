@@ -145,7 +145,9 @@ php think min -m backend css
 
 ### 常见问题
 
-Windows系统需要手动配置node的路径,请参考[](http://doc.fastadmin.net/docs/faq.html#在Windows下如何压缩打包JS和CSS)
+Windows系统需要手动配置node的路径,请参考[在Windows下如何压缩打包JS和CSS](http://doc.fastadmin.net/docs/faq.html#在Windows下如何压缩打包JS和CSS)
+
+如果压缩打包后访问不生效，请检查是否是你的浏览器缓存的原因
 
 ### 使用范例
 

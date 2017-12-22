@@ -22,7 +22,9 @@ FastAdmin的数据库安装文件保存在
 ## 如何修改后台默认皮肤
 
 为了进一步提升加载速度，后台默认启用了绿色主题的皮肤，如何修改其它皮肤呢？
-1.找到`/public/assets/css/backend.css` 这个文件，默认是：
+
+1. 找到`/public/assets/css/backend.css` 这个文件，默认是：
+
 ``` css
 @import url("../css/bootstrap.min.css");
 @import url("../css/fastadmin.min.css");
@@ -34,14 +36,15 @@ FastAdmin的数据库安装文件保存在
 @import url("../css/backend-func.css");
 ```
 
-2.其中可以看到只加载了`skin-green.css`这个皮肤，如果需要启用其它皮肤可以在文件末尾追加
+2. 其中可以看到只加载了`skin-green.css`这个皮肤，如果需要启用其它皮肤可以在文件末尾追加
+
 ``` css
 @import url("../css/skins/skin-颜色标识.css");
 ```
 `颜色标识`总共有 `black/black-light/blue/blue-light/green/green-light/purple/purple-light/red/red-light/yellow/yellow-light`总12个颜色标识
 如果需要一次性加载全部的皮肤样式，则把`skin-green`改为`_all-skins`即可
 
-3.最后修改`application/admin/views/index/index.html`中第6行，将`skin-green`换成你需要的颜色标识
+3. 最后修改`application/admin/views/index/index.html`中第6行，将`skin-green`换成你需要的颜色标识
 
 ## php think install报不是内部或外部命令
 
@@ -241,8 +244,9 @@ top.window.Backend.api.sidebar({
 
 准备工作：首先确保你的FA开启了调试模式`/application/config.php`中的`app_debug`置为`true`
 两种定位错误的方法：
-1.使用Chrome浏览器，打开开发者工具，选中Network(网络)选项卡,刷新一下页面或重新请求一次，定位到我们请求的URL，点击然后在Preview即可看到错误信息
-2.直接查看`/runtime/log`目录下的错误日志
+
+1. 使用Chrome浏览器，打开开发者工具，选中Network(网络)选项卡,刷新一下页面或重新请求一次，定位到我们请求的URL，点击然后在Preview即可看到错误信息
+2. 直接查看`/runtime/log`目录下的错误日志
 
 修复错误后再重试即可
 
@@ -252,7 +256,9 @@ FastAdmin建议运行在PHP5.5及以上版本，因此如果提示网络错误�
 
 FastAdmin可以将静态的资源部署到又拍云或七牛云，可大大的加快网站的访问。
 默认FastAdmin的静态资源是不采用CDN部署的，如果需要启用，需要修改以下两个文件的配置
-1.修改`application/extra/site.php`中`cdnurl`的值为你CDN的地址
-2.修改`application/config.php`中`__CDN__`的值为你CDN的地址
+
+1. 修改`application/extra/site.php`中`cdnurl`的值为你CDN的地址
+2. 修改`application/config.php`中`__CDN__`的值为你CDN的地址
+
 请将你的静态资源`public/assets`文件夹上传至你的CDN空间中去。
 如果你需要将上传的文件直传至又拍云或七牛云，请在扩展管理中下载对应的插件并配置好即可。
