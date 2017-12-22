@@ -3,26 +3,76 @@ title: 命令行
 type: docs
 order: 3
 ---
+FastAdmin基于ThinkPHP5强大的命令行功能扩展了一系列命令行功能，可以很方便的一键生成CRUD、生成权限菜单、压缩打包CSS和JS、安装配置插件等功能。
+
 ## 一键生成CRUD
 
-FastAdmin可通过命令控制台快速的一键生成CRUD，操作非常简单，首先确保数据库配置正确。
+在FastAdmin中可以快速的一键生成CRUD，其中包括控制器、模型、验证器、语言包、JS。
 
-1. 在数据库中创建一个fa_test数据表，编辑好表字段结构，并且一定写上`字段注释`和`表注释`，FastAdmin在生成CRUD时会根据字段属性、字段注释、表注释自动生成语言包和组件排版。
-2. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
-3. 执行`php think crud -t test`即可一键生成test表的CRUD
+### 准备工作
 
->Windows系统一键生成CRUD请使用cmd命令控制台
+在数据库中创建一个`fa_test`数据表，编辑好表字段结构，并且一定写上`字段注释`和`表注释`，相关数据表字段的设计要求可以参考[数据库](http://doc.fastadmin.net/docs/database.html)章节。FastAdmin在生成CRUD时会根据字段属性、字段注释、表注释自动生成语言包、组件和排版。
 
->如果需要生成带目录层级的控制器则可以使用-c参数，例如`php think crud -t test -c mydir/test`，如此test控制器将在文件夹`mydir`目录下
+请确保php所在的目录已经加入到系统环境变量，否则会提示找不到该命令
 
->FastAdmin已经支持多表生成CRUD,请配置-r参数即可,更多参数请使用`php think crud --help`查看
+打开命令行控制台进入到FastAdmin根目录，也就是think文件所在的目录
 
-常见问题：
+### 常用命令
+
+```php
+//生成fa_test表的CRUD
+php think crud -t test
+//生成fa_test表的CRUD且一键生成菜单
+php think crud -t test -u 1
+//删除fa_test表生成的CRUD
+php think crud -t test -d 1
+//生成fa_test表的CRUD且控制器生成在二级目录下
+php think crud -t test -c mydir/test
+//生成fa_test_log表的CRUD且生成对应的控制器为testlog
+php think crud -t test_log -c testlog
+//生成fa_test表的CRUD且对应的模型名为testmodel
+php think crud -t test -m testmodel
+//生成fa_test表的CRUD且生成关联模型category，外链为category_id，关联表主键为id
+php think crud -t test -r category -k category_id -p id
+//生成fa_test表的CRUD且所有以list或data结尾的字段都生成复选框
+php think crud -t test --setcheckboxsuffix=list --setcheckboxsuffix=data
+//生成fa_test表的CRUD且所有以image和img结尾的字段都生成图片上传组件
+php think crud -t test --imagefield=image --setcheckboxsuffix=img
+```
+
+### 参数介绍
+
+```bash
+-t, --table=TABLE                              表名，带不表前缀均可
+-c, --controller[=CONTROLLER]                  生成的控制器名,可选,默认根据表名进行自动解析
+-m, --model[=MODEL]                            生成的模型名,可选,默认根据表名进行自动解析
+-f, --force[=FORCE]                            是否覆盖模式,如果目标位置已经有对应的控制器或模型会提示
+-l, --local[=LOCAL]                            是否本地模型,默认1,置为0时,模型将生成在common模块下
+-r, --relation[=RELATION]                      关联模型表名，带不带表前缀均可
+-e, --relationmodel[=RELATIONMODEL]            生成的关联模型名,可选,默认根据表名进行自动解析
+-k, --relationforeignkey[=RELATIONFOREIGNKEY]  表外键,可选,默认会识别为使用 模型_id 名称
+-p, --relationprimarykey[=RELATIONPRIMARYKEY]  关联模型表主键,可选,默认会自动识别
+-o, --mode[=MODE]                              关联模型,hasone或belongsto [default: "belongsto"]
+-d, --delete[=DELETE]                          删除模式,将删除之前使用CRUD命令生成的相关文件
+-u, --menu[=MENU]                              菜单模式,生成CRUD后将继续一键生成菜单
+--setcheckboxsuffix[=SETCHECKBOXSUFFIX]    自动生成复选框的字段前缀
+--enumradiosuffix[=ENUMRADIOSUFFIX]        自动生成单选框的字段前缀
+--imagefield[=IMAGEFIELD]                  自动生成图片上传组件的字段前缀
+--filefield[=FILEFIELD]                    自动生成文件上传组件的字段前缀
+--intdatesuffix[=INTDATESUFFIX]            自动生成日期组件的字段前缀
+--switchsuffix[=SWITCHSUFFIX]              自动生成可选组件的字段前缀
+--citysuffix[=CITYSUFFIX]                  自动生成城市选择组件的字段前缀
+--selectpagesuffix[=SELECTPAGESUFFIX]      自动生成Selectpage组件的字段前缀
+--editorclass[=EDITORCLASS]                自动生成富文本组件的字段前缀
+--sortfield[=SORTFIELD]                    排序字段
+```
+
+### 常见问题
 
 1. 如果你的表带有下划级会自动生成带层级的控制器和视图，如果你不希望生成带层级的控制器和视图，请使用-c 参数，例如：`php think crud -t test_log -c testlog`将会生成testlog这个控制器，同理如果你的普通表想生成带层级的控制器则可以使用`php think crud -t test -c mydir/test`
-2. FastAdmin自带一个fa_test表用于测试CRUD能支持的字段名称和类型，请直接使用`php think crud -t test`生成查看
+2. FastAdmin自带一个`fa_test`表用于测试CRUD能支持的字段名称和类型，请直接使用`php think crud -t test`生成查看
 
-使用范例：
+### 使用范例
 
 ![示例](http://wx1.sinaimg.cn/large/718e40a3gy1ff9k71b51yg20th0lje82.gif)
 
@@ -30,22 +80,35 @@ FastAdmin可通过命令控制台快速的一键生成CRUD，操作非常简单�
 
 ## 一键生成菜单
 
-FastAdmin可通过命令控制台快速的一键生成后台的权限节点，同时后台的管理菜单也会同步改变，操作非常简单。首先确保已经将FastAdmin配置好，数据库连接正确。
+FastAdmin可通过命令控制台快速的一键生成后台的权限节点，同时后台的管理菜单也会同步改变，操作非常简单。
 
-1. 首先确保已经通过上一步的一键生成CRUD已经生成了test的CRUD
-2. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
-3. 执行`php think menu -c test`即可生成Test控制器的权限节点
-4. 如果想一键重置全部权限节点，可调用`php think menu -c all-controller`即可根据控制器一键重新生成后台的全部权限节点
+### 准备工作
 
->Windows系统一键生成菜单请使用cmd命令控制台
+首先确保已经将FastAdmin配置好，数据库连接正确，同时确保已经通过上一步的`一键生成CRUD`已经生成了test的CRUD
 
->如果你的控制器还有层级关系，比如你的test控制器位于mydir之下，则在生成菜单时使用`php think menu -c mydir/test`来生成
+请确保php所在的目录已经加入到系统环境变量，否则会提示找不到该命令
 
-常见问题:
+打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
+
+### 常用命令
+
+```php
+//一键生成test控制器的权限菜单
+php think menu -c test
+//一键生成mydir/test控制器的权限菜单
+php think menu -c mydir/test
+//删除test控制器生成的菜单
+php think menu -c test -d 1
+//一键全部重新所有控制器的权限菜单
+php think menu -c all-controller
+```
+
+### 常见问题
+
 1. 在使用`php think menu`前确保你的控制器已经添加或通过`php think crud`生成好
 2. 如果之前已经生成了菜单,需要再次生成,请登录后台手动删除之前生成的菜单或使用`php think menu -c 控制器名 -d 1`来删除
 
-使用范例：
+### 使用范例
 
 ![示例](http://wx2.sinaimg.cn/large/718e40a3gy1ff9k644sesg20tl0lehdw.gif)
 
@@ -53,20 +116,38 @@ FastAdmin可通过命令控制台快速的一键生成后台的权限节点，�
 
 
 
-## 一键压缩打包JS、CSS文件
+## 一键压缩打包
 
-FastAdmin采用的是基于`RequireJS`的r.js进行JS和CSS文件的压缩打包，在进行下面的步骤之前，请先确保你的环境已经安装好Node环境。
+在FastAdmin中如果修改了核心的JS或CSS文件，是需要重新压缩打包后在生产环境下才会生效。FastAdmin采用的是基于`RequireJS`的`r.js`进行JS和CSS文件的压缩打包，
 
-1. 首先确认你`application/config.php`中app_debug的值，当为true的时候是采用的无压缩的JS和CSS，当为false时采用的是压缩版的JS和CSS。
-2. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
-3. 执行`php think min -m all -r all`即可执行前后台的JS和CSS压缩打包， `-m all`表示前后模块均压缩 `-r all`表示CSS和JS均压缩
-4. 参数可自由搭配，例如`php think min -m backend -r css`表示仅压缩后台的CSS文件
+### 准备工作
 
->Windows系统一键压缩打包JS、CSS文件请使用cmd命令控制台
+请先确保你的环境已经安装好Node环境。
 
-常见问题:
-1. 在使用`php think min`前确保你已经安装好nodejs环境
-2. Windows系统需要手动配置node的路径,请参考[](http://doc.fastadmin.net/docs/faq.html#在Windows下如何压缩打包JS和CSS)
+首先确认你`application/config.php`中`app_debug`的值，当为true的时候是采用的无压缩的JS和CSS，当为false时采用的是压缩版的JS和CSS。
+
+请确保php所在的目录已经加入到系统环境变量，否则会提示找不到该命令
+
+打开命令行控制台进入到FastAdmin根目录，也就是think文件所在的目录
+
+### 常用命令
+
+```php
+//一键压缩打包前后台的JS和CSS
+php think min -m all -r all
+//一键压缩打包后台的JS和CSS
+php think min -m backend -r all
+//一键压缩打包前后台的JS
+php think min -m all -r js
+//一键压缩打包后台的CSS
+php think min -m backend css
+```
+
+### 常见问题
+
+Windows系统需要手动配置node的路径,请参考[](http://doc.fastadmin.net/docs/faq.html#在Windows下如何压缩打包JS和CSS)
+
+### 使用范例
 
 JS和CSS文件压缩前和压缩后浏览器请求对比(请右键查看大图)：
 
@@ -79,14 +160,40 @@ JS和CSS文件压缩前和压缩后浏览器请求对比(请右键查看大图)�
 
 FastAdmin中的插件可以通过命令行快速的进行安装、卸载、禁用和启用。
 
-1. 打开控制台进入到FastAdmin根目录，也就是think文件所在的目录
-2. 执行`php think addon -a example -c install`即可一键安装开发者示例，example是插件标识 install是操作动作，-c 参数支持`install/uninstall/enable/disable`。
+### 准备工作
 
->Windows系统一键管理插件请使用cmd命令控制台
+请确保你的FastAdmin已经能正常登录后台
 
-常见问题:
-1. 请确保你的FastAdmin已经能正常登录后台
-2. 付费插件请直接在后台`插件管理`或FastAdmin官方[插件市场](http://www.fastadmin.net/store.html)，下载然后进行离线安装
+请确保php所在的目录已经加入到系统环境变量，否则会提示找不到该命令
+
+打开命令行控制台进入到FastAdmin根目录，也就是think文件所在的目录
+
+### 常用命令
+
+```php
+//创建一个myaddon本地插件，常用于开发自己的插件时使用
+php think addon -a myaddon -c create
+//刷新插件缓存，如果禁用启用了插件，部分文件需要刷新才会生效
+php think addon -a example -c refresh
+//远程安装example插件
+php think addon -a example -c install
+//卸载本地的example插件
+php think addon -a example -c uninstall
+//启用本地的example插件
+php think addon -a example -c enable
+//禁用本地的example插件
+php think addon -a example -c disable
+```
+
+### 常见问题
+
+付费插件请直接在后台`插件管理`或FastAdmin官方[插件市场](http://www.fastadmin.net/store.html)下载，然后进行离线安装
+
+请确保php所在的目录已经加入到系统环境变量，否则会提示找不到该命令
+
+打开命令行控制台进入到FastAdmin根目录，也就是think文件所在的目录
+
+
 
 更多一键管理插件的参数请使用`php think addon --help`查看
 

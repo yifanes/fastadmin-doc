@@ -5,7 +5,7 @@ order: 3
 ---
 ## 插件开发
 
-FastAdmin最新版新增了插件功能，可收自由扩展和开发插件，这里简单整理一个插件文档。在此以[官方博客插件](http://www.fastadmin.net/store/blog.html) 为示例来介绍，因为官方博客插件是前后台都有的一套完整方案。
+在FastAdmin中可收自由扩展和开发插件，这里简单整理一个插件文档。在此以[官方博客插件](http://www.fastadmin.net/store/blog.html) 为示例来介绍，因为官方博客插件是前后台都有的一套完整方案。
 
 ## 目录结构
 ```
@@ -86,7 +86,7 @@ blog
 
 ## 目录介绍
 
-```
+```php
 blog
 ├── application	//此文件夹中所有文件会覆盖到根目录的/application文件夹
 ├── assets		//此文件夹中所有文件会复制到/public/assets/addons/blog文件夹
@@ -103,7 +103,7 @@ blog
 └── install.sql	//插件数据库安装文件,此文件仅在插件安装时会进行导入
 ```
 
-其中的`application`和`public`文件夹会覆盖到根目录，这两个文件夹主要用于我们后台管理功能的开发，我们可以先在后台开发好对应的管理功能后，再将对应的功能打包进插件即可，FastAdmin在插件安装和卸载时会自动进行文件冲突检测，如果遇到冲突的文件会提醒用户是否进行覆盖。
+其中的`application`和`public`文件夹会覆盖到根目录，这两个文件夹主要用于我们后台管理功能的开发，我们可以先在后台开发好对应的管理功能后，再将对应的功能打包进插件即可，FastAdmin在插件安装和卸载时会自动进行文件冲突检测，如果遇到冲突的文件会提醒用户是否进行覆盖或删除。
 
 `assets`这个文件夹很关键，FastAdmin会将`assets`中的所有文件夹和文件复制到`/public/assets/addons/blog/`文件夹中去，这个`blog`即是我们的插件目录名称，`assets`文件夹中的所有文件不会进行文件冲突检测，`/public/assets/addons/blog/`这个目录下的文件，我们在视图文件中可以直接通过`__ADDON__`指向这个路径。因此在开发视图时我们可以先使用相对路径设计，完成后我们再统一加上这个`__ADDON__`的前缀
 
@@ -160,7 +160,7 @@ return [
 
 `info.ini`这个文件仅用于保存插件基础信息和开启状态，此文件的内容格式为
 
-```
+```ini
 name = blog
 title = 博客插件
 intro = 响应式博客插件，包含日志、评论、分类、归档等
@@ -172,7 +172,7 @@ state = 1
 
 `install.sql` 这个文件中只能是SQL语句，同时在此文件中可以使用`__PREFIX__`表示数据库表前缀，FastAdmin在安装导入SQL时自动进行替换。此文件的内容格式为
 
-```
+```sql
 ;我们在创建数据库时最好加上IF NOT EXISTS
 CREATE TABLE IF NOT EXISTS `__PREFIX__blog_category` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -234,4 +234,6 @@ FastAdmin插件分为在线安装和命令行安装，在线安装可以直接�
 ## 插件市场
 
 目前FastAdmin官方已经上线插件市场，开发者可以在插件市场下载插件进行离线安装，地址：http://www.fastadmin.net/store.html
+
+如果你开发了一款插件需要上架到FastAdmin的插件市场，可以通过在线发布插件的形式分享或售卖你的插件，请点击http://www.fastadmin.net/postaddon.html查看
 

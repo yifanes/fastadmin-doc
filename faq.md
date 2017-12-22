@@ -64,7 +64,7 @@ FastAdmin的数据库安装文件保存在
 
 这种情况一般在Apache下伪静态不工作的情况下出现，
 首先确保已经启用Apache的伪静态，确保目录已经配置好权限，如下面的Directory配置
-``` apache
+``` ini
 <VirtualHost *:80>
     DocumentRoot "/Users/Karson/Project/fastadmin/public"
     ServerName fa.com 
@@ -100,7 +100,7 @@ RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
 
 例如：
 
-```
+```ini
 server {
         listen       80;
         server_name  www.fa.com *.fa.com;
@@ -174,7 +174,7 @@ composer config repo.packagist composer https://packagist.phpcomposer.com
 /application/admin/views/index/login.html
 ```
 修改
-```
+```css
 body {
     color:#999;
     background:url('http://img.infinitynewtab.com/wallpaper/{:date("Ymd")%4000}.jpg');
@@ -190,7 +190,7 @@ body {
 FastAdmin后台左侧菜单栏有彩色的小角标，这一般用于通知和提醒操作，在后台开发时是非常方便的一个小功能，如何修改和禁用它呢？
 找到`/application/admin/controller/Index.php`中的index方法，其中有一段
 
-```
+```php
 $menulist = $this->auth->getSidebar([
 	'dashboard'  => 'hot',
 	'auth'       => ['new', 'red', 'badge'],
@@ -211,7 +211,7 @@ $menulist = $this->auth->getSidebar([
 在这里仅仅是PHP端操作小角标的方式，在JS端同样可以进行相应的操作
 在你的模块中可以调用
 
-```
+```js
 top.window.Backend.api.sidebar({
 	'auth/admin':44
 });
@@ -220,7 +220,7 @@ top.window.Backend.api.sidebar({
 具体使用方法同PHP端相同
 如何动态的在JS中移除一个小角标呢，采用以下的方法即可
 
-```
+```js
 top.window.Backend.api.sidebar({
 	'auth/admin':0
 });

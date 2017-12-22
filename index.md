@@ -22,7 +22,7 @@ FastAdmin是一款基于ThinkPHP5+Bootstrap的极速后台开发框架。
 * 一键压缩打包JS和CSS文件
 * 强大的插件扩展功能，在线安装卸载插件
 * 多语言支持，服务端及客户端支持
-* 无缝整合第三方云存储功能
+* 无缝整合第三方云存储(七牛、阿里云OSS、又拍云)功能
 * 第三方登录(QQ、微信、微博)整合
 * Ucenter整合
 
@@ -51,7 +51,7 @@ weibo: @karsonzhang
 
 Github: https://github.com/karsonzhang/fastadmin
 
-Git@OSC: https://git.oschina.net/karson/fastadmin
+Git@OSC: https://gitee.com/karson/fastadmin
 
 ## **特别鸣谢**
 
