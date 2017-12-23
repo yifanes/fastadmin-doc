@@ -3,8 +3,6 @@ title: 插件
 type: docs
 order: 3
 ---
-## 插件开发
-
 在FastAdmin中可收自由扩展和开发插件，这里简单整理一个插件文档。在此以[官方博客插件](http://www.fastadmin.net/store/blog.html) 为示例来介绍，因为官方博客插件是前后台都有的一套完整方案。
 
 ## 目录结构

@@ -14,9 +14,7 @@ order: 9
 
 FastAdmin在安装时会自动创建数据库和数据表,免除了你手动创建数据库和导入数据库的烦恼。
 但很多时候我们需要构造自己的安装SQL，这就需要修改安装SQL文件。
-FastAdmin的数据库安装文件保存在
-
-[/application/admin/command/Install/fastadmin.sql](http://git.oschina.net/karson/fastadmin/raw/master/application/admin/command/Install/fastadmin.sql)
+FastAdmin的数据库安装文件保存在 [/application/admin/command/Install/fastadmin.sql](https://gitee.com/karson/fastadmin/raw/master/application/admin/command/Install/fastadmin.sql)
 
 
 ## 如何修改后台默认皮肤
@@ -57,9 +55,9 @@ FastAdmin的数据库安装文件保存在
 
 这是由于在Linux环境下未找到php的脚本程序
 
-有两种解决办法，首先尝试使用which php找到php所在的位置。
-1. 找到php脚本程序所在的目录，加入到PATH环境变量中去，使用export PATH=$PATH:php脚本程序所在目录
-2. 找到php脚本程序文件，使用ln -s php脚本程序文件 /usr/bin/php
+有两种解决办法，首先尝试使用`which php`找到php所在的位置。
+1. 找到php脚本程序所在的目录，加入到PATH环境变量中去，使用`export PATH=$PATH:php脚本程序所在目录`
+2. 找到php脚本程序文件，使用`ln -s php脚本程序文件 /usr/bin/php`
 
 ## 安装后只能访问首页，其它页均报no input file specified
 
@@ -206,7 +204,7 @@ $menulist = $this->auth->getSidebar([
 数组的键名是对应的左侧菜单栏的相对链接
 数组的键值是需要显示的文字或数字，可以传字符串或数组
 
-1. 如果是字符串，则角标的颜色是按照'red', 'green', 'yellow', 'blue', 'teal', 'orange', 'purple'的方式进行循环的。
+1. 如果是字符串，则角标的颜色是按照`'red', 'green', 'yellow', 'blue', 'teal', 'orange', 'purple'`的方式进行循环的。
 2. 如果是数组，这三个值分别表示：[显示的文字, 颜色，展现方式(badge或label)]
 
 如果需要删除这个小角标，则可以直接到数组置为空即可
@@ -261,4 +259,4 @@ FastAdmin可以将静态的资源部署到又拍云或七牛云，可大大的�
 2. 修改`application/config.php`中`__CDN__`的值为你CDN的地址
 
 请将你的静态资源`public/assets`文件夹上传至你的CDN空间中去。
-如果你需要将上传的文件直传至又拍云或七牛云，请在扩展管理中下载对应的插件并配置好即可。
+如果你需要将上传的文件直传至又拍云或七牛云，请在插件管理中下载对应的插件并配置好即可。
