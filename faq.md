@@ -1,7 +1,7 @@
 ---
 title: 常见问题
 type: docs
-order: 9
+order: 12
 ---
 
 如果你在使用FastAdmin的过程中发现任何问题,请到论坛发贴: http://forum.fastadmin.net

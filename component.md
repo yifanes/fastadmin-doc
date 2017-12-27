@@ -1,7 +1,7 @@
 ---
 title: 组件
 type: docs
-order: 8
+order: 11
 ---
 
 ## 文件上传

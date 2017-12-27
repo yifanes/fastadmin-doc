@@ -1,7 +1,7 @@
 ---
 title: 插件
 type: docs
-order: 3
+order: 4
 ---
 在FastAdmin中可收自由扩展和开发插件，这里简单整理一个插件文档。在此以[官方博客插件](http://www.fastadmin.net/store/blog.html) 为示例来介绍，因为官方博客插件是前后台都有的一套完整方案。
 
@@ -222,6 +222,10 @@ FastAdmin中的行为支持ThinkPHP5的所有行为，同时FastAdmin自定义�
 使用行为时在`Blog.php`中添加上对应的方法，FastAdmin在安装时、禁用、启用即可自动注册行为。但一定请注意在`Blog.php`中编写行为方法是使用的是驼峰式规则，例如`upload_after`，方法名则为`uploadAfter`，如果方法名使用`upload_after`则不会注册成功
 
 至此，FastAdmin插件开发所涉及到的文件和文件夹已经介绍完了，如果有疑问，请及时在群或论坛反馈。
+
+## 插件示例
+
+我们准备了一篇插件开发简明教程，请[点击这里查看](http://forum.fastadmin.net/d/324)
 
 ## 插件管理
 

@@ -1,7 +1,7 @@
 ---
 title: 控制器
 type: docs
-order: 6
+order: 8
 ---
 
 ## 基类控制器

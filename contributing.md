@@ -1,7 +1,7 @@
 ---
 title: 贡献代码
 type: docs
-order: 10
+order: 13
 ---
 
 ## 开发

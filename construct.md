@@ -1,7 +1,7 @@
 ---
 title: 目录结构
 type: docs
-order: 4
+order: 5
 ---
 
 FastAdmin目录结构如下：
