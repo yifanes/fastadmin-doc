@@ -55,15 +55,15 @@ php think crud -t test --imagefield=image --setcheckboxsuffix=img
 -o, --mode[=MODE]                              关联模型,hasone或belongsto [default: "belongsto"]
 -d, --delete[=DELETE]                          删除模式,将删除之前使用CRUD命令生成的相关文件
 -u, --menu[=MENU]                              菜单模式,生成CRUD后将继续一键生成菜单
---setcheckboxsuffix[=SETCHECKBOXSUFFIX]    自动生成复选框的字段前缀
---enumradiosuffix[=ENUMRADIOSUFFIX]        自动生成单选框的字段前缀
---imagefield[=IMAGEFIELD]                  自动生成图片上传组件的字段前缀
---filefield[=FILEFIELD]                    自动生成文件上传组件的字段前缀
---intdatesuffix[=INTDATESUFFIX]            自动生成日期组件的字段前缀
---switchsuffix[=SWITCHSUFFIX]              自动生成可选组件的字段前缀
---citysuffix[=CITYSUFFIX]                  自动生成城市选择组件的字段前缀
---selectpagesuffix[=SELECTPAGESUFFIX]      自动生成Selectpage组件的字段前缀
---editorclass[=EDITORCLASS]                自动生成富文本组件的字段前缀
+--setcheckboxsuffix[=SETCHECKBOXSUFFIX]    自动生成复选框的字段后缀
+--enumradiosuffix[=ENUMRADIOSUFFIX]        自动生成单选框的字段后缀
+--imagefield[=IMAGEFIELD]                  自动生成图片上传组件的字段后缀
+--filefield[=FILEFIELD]                    自动生成文件上传组件的字段后缀
+--intdatesuffix[=INTDATESUFFIX]            自动生成日期组件的字段后缀
+--switchsuffix[=SWITCHSUFFIX]              自动生成可选组件的字段后缀
+--citysuffix[=CITYSUFFIX]                  自动生成城市选择组件的字段后缀
+--selectpagesuffix[=SELECTPAGESUFFIX]      自动生成Selectpage组件的字段后缀
+--editorclass[=EDITORCLASS]                自动生成富文本组件的字段后缀
 --sortfield[=SORTFIELD]                    排序字段
 ```
 
