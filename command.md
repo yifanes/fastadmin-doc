@@ -63,6 +63,7 @@ php think crud -t test --imagefield=image --setcheckboxsuffix=img
 --switchsuffix[=SWITCHSUFFIX]              自动生成可选组件的字段后缀
 --citysuffix[=CITYSUFFIX]                  自动生成城市选择组件的字段后缀
 --selectpagesuffix[=SELECTPAGESUFFIX]      自动生成Selectpage组件的字段后缀
+--ignorefields[=IGNOREFIELDS]      	       排除的字段
 --editorclass[=EDITORCLASS]                自动生成富文本组件的字段后缀
 --sortfield[=SORTFIELD]                    排序字段
 ```

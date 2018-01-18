@@ -79,3 +79,6 @@ function lang($name, $vars = [], $lang = '')
 	return Lang::get($name, $vars, $lang);
 }
 ```
+
+
+
