@@ -26,6 +26,8 @@ order: 9
 | 单选    | 生成单选框                   |
 | 数组    | 生成一维数组输入列表且可动态添加和排序     |
 
+> 新增系统配置变量时，由于JS端验证使用的是nice-validator，因而此处校验规则rule与nice-validator内置规则（Core-Rules）一致，具体使用方法请查看网址：https://validator.niceue.com/docs/core-rules.html。
+
 ## 分类管理
 
 分类模块是我们在开发中经常会使用到的一个模块，FastAdmin集成了一个简单的通用分类模块
