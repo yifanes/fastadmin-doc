@@ -49,6 +49,7 @@ order: 7
 | list    | timelist    | set         | 识别为列表字段，自动生成多选下拉列表       |
 | data    | hobbydata   | enum        | 识别为选项字段，自动生成单选框          |
 | data    | hobbydata   | set         | 识别为选项字段，自动生成复选框          |
+| switch  | siteswitch  | tinyint     | 识别为开头字段，自动生成可选单选框        |
 
 温馨提示：以list或data结尾的字段必须搭配enum或set类型才起作用 
 
