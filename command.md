@@ -186,6 +186,10 @@ php think addon -a example -c uninstall
 php think addon -a example -c enable
 //禁用本地的example插件
 php think addon -a example -c disable
+//升级本地的example插件
+php think addon -a example -c upgrade
+//将本地的example插件打包成zip文件
+php think addon -a example -c package
 ```
 
 ### 常见问题
