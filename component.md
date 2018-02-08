@@ -16,7 +16,7 @@ FastAdmin支持将文件或图片直传到第三方云存储服务器而不需�
 | 阿里OSS  | 阿里系、稳定、图片处理、支持挂载为分区    | [下载](http://www.fastadmin.net/store/alioss.html) |
 | Ucloud | 每月20G免费流量、图片处理         | [下载](http://www.fastadmin.net/store/ucloud.html) |
 
-在使用第三方云存储功能之前请先注册一个账号并新增一个云储存服务,你可以通过FastAdmin的邀请链接注册，FastAdmin会获得相应平台的流量
+在使用第三方云存储功能之前请先注册一个账号并新增一个云储存服务,你可以通过FastAdmin的邀请链接注册，FastAdmin会获得相应平台的CDN流量
 又拍云：https://console.upyun.com/register/?invite=SyAt3ehQZ
 七牛云：https://portal.qiniu.com/signup?code=3l79xtos9w9qq
 阿里云：https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=t50mdbun&utm_source=t50mdbun 
@@ -106,17 +106,19 @@ Selectpage所支持的扩展属性
 
 FastAdmin的富文本编辑器只需要给对应的textarea增加一个class为`editor`即可，FastAdmin在渲染时即会将textarea渲染为富文本编辑器，目前支持`summernote`、`wangeditor`和`ueditor`富文本编辑器，需安装对应的插件即可正常使用。
 
-| 插件         | 特点                      | 插件下载                                     |
-| ---------- | ----------------------- | ---------------------------------------- |
-| Summernote | 操作简单、易用、图片直传第三方存储       | [下载](http://www.fastadmin.net/store/summernote.html) |
-| Wangeditor | 轻量、简洁、易用、图片直传第三方存储      | [下载](http://www.fastadmin.net/store/wangeditor.html) |
-| Ueditor    | 百度出品、复杂、功能全、图片不能直传第三方存储 | [下载](http://www.fastadmin.net/store/ueditor.html) |
+| 插件         | 特点                        | 插件下载                                     |
+| ---------- | ------------------------- | ---------------------------------------- |
+| Summernote | 操作简单、易用、图片直传第三方存储         | [下载](http://www.fastadmin.net/store/summernote.html) |
+| Wangeditor | 轻量、简洁、易用、图片直传第三方存储        | [下载](http://www.fastadmin.net/store/wangeditor.html) |
+| Simeditor  | 漂亮、简单、功能简单、图片直传第三方存储      | [下载](http://www.fastadmin.net/store/simeditor.html) |
+| Umeditor   | 百度出品、简单、易用、支持公式、图片直传第三方存储 | [下载](http://www.fastadmin.net/store/umeditor.html) |
+| Ueditor    | 百度出品、复杂、功能全、图片不能直传第三方存储   | [下载](http://www.fastadmin.net/store/ueditor.html) |
 
 > 在安装完对应的富文本插件后切记启用、刷新插件缓存并清除浏览器缓存后才生效。
 
 ## 表单验证
 
-FastAdmin的表单验证采用的是`Nice-validator`验证插件，`Nice-validator`是一款非常强大的验证插件，通过简单在元素上配置规则，即可达到验证的效果。在FastAdmin当中我们只需要给元素添加`data-rule=""`即可开启`Nice-validator`的验证，常用的规则如下
+FastAdmin的表单验证采用的是`Nice-validator`验证插件，`Nice-validator`是一款非常强大的表单验证插件，通过简单在元素上配置规则，即可达到验证的效果。在FastAdmin当中我们只需要给元素添加`data-rule="规则"`即可开启`Nice-validator`的验证，常用的规则如下
 
 | 规则          | 描述                    | 示例                                       |
 | ----------- | --------------------- | ---------------------------------------- |

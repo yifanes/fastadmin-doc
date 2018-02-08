@@ -14,8 +14,7 @@ order: 12
 
 FastAdmin在安装时会自动创建数据库和数据表,免除了你手动创建数据库和导入数据库的烦恼。
 但很多时候我们需要构造自己的安装SQL，这就需要修改安装SQL文件。
-FastAdmin的数据库安装文件保存在 [/application/admin/command/Install/fastadmin.sql](https://gitee.com/karson/fastadmin/raw/master/application/admin/command/Install/fastadmin.sql)
-
+FastAdmin的数据库安装文件保存在 [application/admin/command/Install/fastadmin.sql](https://gitee.com/karson/fastadmin/raw/master/application/admin/command/Install/fastadmin.sql)
 
 ## 如何修改后台默认皮肤
 
@@ -160,32 +159,6 @@ composer config repo.packagist composer https://packagist.phpcomposer.com
 感谢：https://pkg.phpcomposer.com/
 
 
-## bower install时提示选择版本如何选择
-
-这是由于不同插件对jQuery版本的要求不一致导致的，请选择较高版本即可
-
-
-## 如何禁用后台登录的每日背景图切换
-
-在FastAdmin后台登录时可以看到每日的背景图都是不一样的，如何想要固定一张背景图或禁用背景图该如何操作呢？
-
-
-找到
-```
-/application/admin/views/index/login.html
-```
-修改
-```css
-body {
-    color:#999;
-    background:url('http://img.infinitynewtab.com/wallpaper/{:date("Ymd")%4000}.jpg');
-    background-size:cover;
-}
-```
-
-修改其中的background地址即可
-
-
 ## 如何修改或禁用左侧菜单栏的角标
 
 FastAdmin后台左侧菜单栏有彩色的小角标，这一般用于通知和提醒操作，在后台开发时是非常方便的一个小功能，如何修改和禁用它呢？
@@ -230,7 +203,7 @@ top.window.Backend.api.sidebar({
 ## 在Windows下如何压缩打包JS和CSS
 
 在FastAdmin中压缩打包JS和CSS文件需要NodeJS的支持
-在Windows下需要手动配置Node的可执行文件,请修改`/application/admin/command/Min.php`中`$nodeExec`的值
+在Windows下需要手动配置Node的可执行文件,请修改`application/admin/command/Min.php`中`$nodeExec`的值
 如你的Node可执行文件是`C:/Program Files/nodejs/node.exe`，则请配置`$nodeExec = '"C:/Program Files/nodejs/node.exe"'`;
 
 
@@ -240,11 +213,11 @@ top.window.Backend.api.sidebar({
 
 ![](http://cdn.forum.fastadmin.net/uploads/201706/02/0f650de53f0ee93ddfd658f731027d43)
 
-准备工作：首先确保你的FA开启了调试模式`/application/config.php`中的`app_debug`置为`true`
+准备工作：首先确保你的FA开启了调试模式`application/config.php`中的`app_debug`置为`true`
 两种定位错误的方法：
 
 1. 使用Chrome浏览器，打开开发者工具，选中Network(网络)选项卡,刷新一下页面或重新请求一次，定位到我们请求的URL，点击然后在Preview即可看到错误信息
-2. 直接查看`/runtime/log`目录下的错误日志
+2. 直接查看`runtime/log`目录下的错误日志
 
 修复错误后再重试即可
 

@@ -141,7 +141,7 @@ php think min -m backend -r all
 //一键压缩打包前后台的JS
 php think min -m all -r js
 //一键压缩打包后台的CSS
-php think min -m backend css
+php think min -m backend -r css
 ```
 
 ### 常见问题

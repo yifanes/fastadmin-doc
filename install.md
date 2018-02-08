@@ -21,7 +21,7 @@ Less (可选,用于编辑less文件,如果你需要增改css样式,最好安装�
 
 ## **完整包安装**
 
-1. 前往官网下载页面(http://www.fastadmin.net/download.html)下载完整包解压到你的项目目录
+1. 前往官网下载页面([http://www.fastadmin.net/download.html](http://www.fastadmin.net/download.html?ref=docs))下载完整包解压到你的项目目录
 2. 添加虚拟主机并绑定到项目中的`public`目录
 3. 访问 http://www.yoursite.com/install.php 进行安装
 

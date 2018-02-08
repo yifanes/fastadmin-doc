@@ -184,7 +184,7 @@ protected $modelSceneValidate = false;
 protected $multiFields = 'status';
 ```
 
-我们可以直接在当前控制器使用`$this->属性名`来调用所支持的属性，同时TP5中`\think\Controller`所支持的属性也全部支持。
+我们可以直接在当前控制器使用`$this->属性名`来调用所支持的属性，也支持直接在当前控制器定义相关属性来覆盖父类的属性，同时TP5中`\think\Controller`所支持的属性也全部支持。
 
 基类`app\common\controller\Backend`中所支持的方法如下
 
