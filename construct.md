@@ -60,7 +60,7 @@ FastAdmin项目目录
 ~~~
 ## 应用模块
 
-在FastAdmin中默认有四个应用模块`admin、api、common、index`，`common`模块是。你也可以扩展开发自己的应用模块。
+在FastAdmin中默认有四个应用模块：`admin`、`api`、`common`、`index`，你也可以扩展开发自己的应用模块。
 
 后台模块(admin)是FastAdmin中的核心模块，后台模块又分为`系统配置`、`附件管理`、`分类管理`、`插件管理`等多个功能模块，更多的功能模块可以在插件管理中自由的安装和卸载。
 
