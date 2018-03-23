@@ -18,7 +18,7 @@ application/common/controller/Frontend.php //前台基类控制器
 
 ## 基础结构
 
-在后台中我们的控制器都必须继承自`\app\common\controller\Backend`这个基类，其中控制器的`index/add/edit/del/multi/recyclebin/destroy/restore/import/selectpage`全都是可选的方法，基类的这些方法使用`traits`进行引入，具体位置在`application/admin/library/traits/Back.php`中，CRUD生成的标准控制器如下：
+在后台中我们的控制器都必须继承自`\app\common\controller\Backend`这个基类，其中控制器的`index/add/edit/del/multi/recyclebin/destroy/restore/import/selectpage`全都是可选的方法，基类的这些方法使用`traits`进行引入，具体位置在`application/admin/library/traits/Backend.php`中，CRUD生成的标准控制器如下：
 
 ```php
 <?php
