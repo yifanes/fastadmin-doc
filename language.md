@@ -46,39 +46,4 @@ lang('This is %s,base on %s', ['FastAdmin', 'ThinkPHP5']);
 
 因此如果要使第三个参数$lang生效，则只能将第二个参数传为数组或采用ThinkPHP中的lang函数
 
-``` php
-/**
- * 获取语言变量值
- * @param string    $name 语言变量名
- * @param array     $vars 动态变量值
- * @param string    $lang 语言
- * @return mixed
- */
-function __($name, $vars = [], $lang = '')
-{
-	if (!is_array($vars))
-	{
-		$vars = func_get_args();
-		array_shift($vars);
-		$lang = '';
-	}
-	return Lang::get($name, $vars, $lang);
-}
-```
-
-``` php
-/**
- * 获取语言变量值
- * @param string    $name 语言变量名
- * @param array     $vars 动态变量值
- * @param string    $lang 语言
- * @return mixed
- */
-function lang($name, $vars = [], $lang = '')
-{
-	return Lang::get($name, $vars, $lang);
-}
-```
-
-
-
+如果在HTML视图文件中使用多语言

@@ -4,7 +4,7 @@ type: docs
 order: 12
 ---
 
-如果你在使用FastAdmin的过程中发现任何问题,请到论坛发贴: http://forum.fastadmin.net
+如果你在使用FastAdmin的过程中发现任何问题,请到论坛发贴: https://forum.fastadmin.net
 
 ## 安装后提示控制器不存在:E或控制器不存在:N
 
@@ -211,7 +211,7 @@ top.window.Backend.api.sidebar({
 
 很多时候都有可能遇到提示未知的数据格式或网络错误这个提示，产生这个错误的原因一般来说都是服务端报错，导致返回的数据不是JSON格式或直接未返回，如下图
 
-![](http://cdn.forum.fastadmin.net/uploads/201706/02/0f650de53f0ee93ddfd658f731027d43)
+![](https://cdn.forum.fastadmin.net/uploads/201706/02/0f650de53f0ee93ddfd658f731027d43)
 
 准备工作：首先确保你的FA开启了调试模式`application/config.php`中的`app_debug`置为`true`
 两种定位错误的方法：
@@ -223,13 +223,40 @@ top.window.Backend.api.sidebar({
 
 FastAdmin建议运行在PHP5.5及以上版本，因此如果提示网络错误请检查你的PHP是否低于该版本
 
-## 如何将静态资源采用CDN方式部署到又拍云或七牛云
+## 安装时提示无法写入application/database.php
 
-FastAdmin可以将静态的资源部署到又拍云或七牛云，可大大的加快网站的访问。
+造成此问题的原因通常有几下两种情况
+
+1. `application/database.php`文件没有写入权限，请先查看你的apache或nginx的运行用户，然后修改文件的所有者，再添加上写入的权限，通常情况下需要执行以下命令：
+
+   ```
+   cd /yourpath/fastadmin/
+   chown www-data:www-data ./ -R
+   chmod a+w ./application/database.php
+   chmod a+w ./runtime/ -R
+   ```
+
+2. 其次就是可能你的目录绑定到public后，open_basedir限制了访问父目录，可以配置下open_basedir，添加上级目录即可，通常情况下Linux需要在配置文件中追加的代码是：
+
+   ```
+   fastcgi_param PHP_ADMIN_VALUE "open_basedir=/yourpath/fastadmin/:/tmp/:/proc/";
+   ```
+
+   如果使用的是lnmp一键安装包，可能需要修改`.user.ini`文件，在`.user.ini`文件中添加
+
+   ```
+   open_basedir=/yourpath/fastadmin/:/tmp/:/proc/
+   ```
+
+   ​
+
+## 如何将静态资源采用CDN方式部署到第三方云存储
+
+FastAdmin可以将静态的资源部署到又拍云、七牛云或阿里OSS，可大大的加快网站的访问。
 默认FastAdmin的静态资源是不采用CDN部署的，如果需要启用，需要修改以下两个文件的配置
 
 1. 修改`application/extra/site.php`中`cdnurl`的值为你CDN的地址
 2. 修改`application/config.php`中`__CDN__`的值为你CDN的地址
 
 请将你的静态资源`public/assets`文件夹上传至你的CDN空间中去。
-如果你需要将上传的文件直传至又拍云或七牛云，请在插件管理中下载对应的插件并配置好即可。
+如果你需要将上传的文件直传至又拍云、七牛云或阿里OSS，请在插件管理中下载对应第三方云存储的插件并配置好即可。

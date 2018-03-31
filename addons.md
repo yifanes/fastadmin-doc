@@ -3,7 +3,7 @@ title: 插件
 type: docs
 order: 4
 ---
-在FastAdmin中可收自由扩展和开发插件，这里简单整理一个插件文档。在此以[官方博客插件](http://www.fastadmin.net/store/blog.html) 为示例来介绍，因为官方博客插件是前后台都有的一套完整方案。
+在FastAdmin中可收自由扩展和开发插件，这里简单整理一个插件文档。在此以[官方博客插件](https://www.fastadmin.net/store/blog.html) 为示例来介绍，因为官方博客插件是前后台都有的一套完整方案。
 
 ## 目录结构
 ```
@@ -163,7 +163,7 @@ name = blog
 title = 博客插件
 intro = 响应式博客插件，包含日志、评论、分类、归档等
 author = Karson
-website = http://www.fastadmin.net
+website = https://www.fastadmin.net
 version = 1.0.0
 state = 1
 ```
@@ -225,17 +225,17 @@ FastAdmin中的行为支持ThinkPHP5的所有行为，同时FastAdmin自定义�
 
 ## 插件示例
 
-我们准备了一篇插件开发简明教程，请[点击这里查看](http://forum.fastadmin.net/d/324)
+我们准备了一篇插件开发简明教程，请[点击这里查看](https://forum.fastadmin.net/d/324)
 
 ## 插件管理
 
 FastAdmin插件分为在线安装和命令行安装，在线安装可以直接在后台插件管理进行安装和卸载。
 
-命令行安装适合禁用或移除了后台插件管理功能的开发者使用，具体请参考命令行章节：[一键管理插件](http://doc.fastadmin.net/docs/command.html#一键管理插件)
+命令行安装适合禁用或移除了后台插件管理功能的开发者使用，具体请参考命令行章节：[一键管理插件](https://doc.fastadmin.net/docs/command.html#一键管理插件)
 
 ## 插件市场
 
-目前FastAdmin官方已经上线插件市场，开发者可以在插件市场下载插件进行离线安装，地址：http://www.fastadmin.net/store.html
+目前FastAdmin官方已经上线插件市场，开发者可以在插件市场下载插件进行离线安装，地址：https://www.fastadmin.net/store.html
 
-如果你开发了一款插件需要上架到FastAdmin的插件市场，可以通过在线发布插件的形式分享或售卖你的插件，请点击http://www.fastadmin.net/postaddon.html查看
+如果你开发了一款插件需要上架到FastAdmin的插件市场，可以通过在线发布插件的形式分享或售卖你的插件，请点击https://www.fastadmin.net/postaddon.html查看
 

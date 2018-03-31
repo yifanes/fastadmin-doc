@@ -39,17 +39,21 @@ order: 13
 **操作流程**
 
 1. 首页Fork [karsonzhang/fastadmin-doc](https://github.com/karsonzhang/fastadmin-doc)
+
 2. 然后Clone到你的本地：
     ```
     git clone https://github.com/<yourname>/fastadmin-doc.git
     ```
+
 3. 编写代码并提交
+
 4. Push 到你的仓库
+
 5. 创建 `Pull Request` 并描述你完成的功能或者做出的修改。
 
 ## 报告BUG
 
-当你在使用过程中遇到问题，请查阅 [常见问题](faq.html) 或者在 [FastAdmin交流社区](http://forum.fastadmin.net) 提交你的问题。
+当你在使用过程中遇到问题，请查阅 [常见问题](faq.html) 或者在 [FastAdmin交流社区](https://forum.fastadmin.net) 提交你的问题。
 
 
 

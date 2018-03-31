@@ -321,5 +321,5 @@ table.bootstrapTable({
 Table.api.bindevent(table);
 ```
 
-表格的详细介绍可以查看一张图解表格：http://forum.fastadmin.net/d/323
+表格的详细介绍可以查看一张图解表格：https://forum.fastadmin.net/d/323
 
