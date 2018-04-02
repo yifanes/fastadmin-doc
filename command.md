@@ -232,7 +232,7 @@ php think api -h
 | @ApiSector        | API分组,默认按钮控制器或控制器的@ApiSector进行分组         | (测试分组)                                                   |
 | @ApiParams        | API请求参数,如果在@ApiRoute中有对应的{@参数名}，将进行替换 | (name="id", type="integer", required=true, description="会员ID") |
 | @ApiHeaders       | API请求传递的Headers信息                                   | (name=token, type=string, required=true, description="请求的Token") |
-| @ApiReturn        | API返回的结果示例                                          | (data="{'code':'0', 'mesg':'返回成功'}")                     |
+| @ApiReturn        | API返回的结果示例                                          | ({"code":1,"msg":"返回成功"})                                |
 | @ApiReturnParams  | API返回的结果参数介绍                                      | (name="code", type="integer", required=true, sample="0")     |
 | @ApiReturnHeaders | API返回的Headers信息                                       | (name="token", type="integer", required=true, sample="123456") |
 | @ApiInternal      | 忽略的方法,表示此方法将不加入文档                          | 无                                                           |

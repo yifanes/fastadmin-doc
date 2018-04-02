@@ -51,7 +51,9 @@ Less (可选,用于编辑less文件,如果你需要增改css样式,最好安装�
 7. 如果在Linux环境中使用的是root账户，`bower install`执行出错，请尝试添加上`--allow-root`参数
 8. 如果访问后台右侧空白，请检查资源是否下载完整，可使用`bower install`多试两次或下载资源包覆盖
 
-* * * * *
+
+
+
 遇到问题到[社区](https://forum.fastadmin.net) 或QQ群：[636393962](https://jq.qq.com/?_wv=1027&k=487PNBb) 反馈
 
 
