@@ -162,7 +162,7 @@ FastAdmin的表单验证采用的是`Nice-validator`验证插件，`Nice-validat
 | username    | 必须为3-12位数字、字母、下划线     | username                                 |
 | password    | 必须为6-16位字符，不能有空格      | password                                 |
 
-更多的使用方法请参考[Nice-validator官方教程](https://validator.niceue.com/docs/)
+> 更多的使用方法请参考[Nice-validator官方教程](https://validator.niceue.com/docs/)
 
 ## 城市选择
 
@@ -191,7 +191,7 @@ $("#city-picker").on("cp:updated", function() {
 
 如果我们数据库中存放的是地区的code值，在显示时我们则需要把对应的code通过读取数据库转换成我们的地区中文，然后再设定input的value值即可。
 
-更多的使用方法请参考[city-picker官方教程](https://github.com/tshi0912/city-picker)
+> 更多的使用方法请参考[city-picker官方教程](https://github.com/tshi0912/city-picker)
 
 ## 日期时间
 
@@ -213,7 +213,7 @@ $("#city-picker").on("cp:updated", function() {
 | data-use-strict     | 使用严格的日期时间,错误日期将被忽略                          | data-use-strict="true"               |
 | data-side-by-side   | 日期时间并排显示                                             | data-side-by-side="true"             |
 
-更多的使用方法请参考[Bootstrap-datetimepicker官方教程](https://eonasdan.github.io/bootstrap-datetimepicker/)
+> 更多的使用方法请参考[Bootstrap-datetimepicker官方教程](https://eonasdan.github.io/bootstrap-datetimepicker/)
 
 ## 下拉列表
 
@@ -230,5 +230,5 @@ $("#city-picker").on("cp:updated", function() {
 | title            | 自定义选中以后显示的文字   | option           | title="分类1"                    |
 | data-style       | 定义样式           | select           | data-style="btn-primary"       |
 
-更多的使用方法请参考：[Selectpicker官方教程](https://silviomoreto.github.io/bootstrap-select/)
+> 更多的使用方法请参考：[Selectpicker官方教程](https://silviomoreto.github.io/bootstrap-select/)
 

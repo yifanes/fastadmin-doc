@@ -76,6 +76,8 @@ php think crud -t test --relation=category --relation=admin --relationforeignkey
 
 1. 如果你的表带有下划级会自动生成带层级的控制器和视图，如果你不希望生成带层级的控制器和视图，请使用-c 参数，例如：`php think crud -t test_log -c testlog`将会生成testlog这个控制器，同理如果你的普通表想生成带层级的控制器则可以使用`php think crud -t test -c mydir/test`
 2. FastAdmin自带一个`fa_test`表用于测试CRUD能支持的字段名称和类型，请直接使用`php think crud -t test`生成查看
+3. 生成CRUD后，关联表外键在列表未显示对应的关联表数据信息，此时建议你使用在线命令行插件进行可视化生成
+4. 生成CRUD后，在添加或编辑时外键字段未能正确显示关联表数据列表，请查看数据库章节常见问题中的说明。
 
 ### 使用范例
 

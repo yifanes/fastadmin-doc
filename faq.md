@@ -4,7 +4,54 @@ type: docs
 order: 12
 ---
 
-如果你在使用FastAdmin的过程中发现任何问题,请到论坛发贴: https://forum.fastadmin.net
+如果你在使用FastAdmin的过程中发现任何问题,请到交流社区发贴: https://forum.fastadmin.net
+
+## 为什么在调试模式下功能正常，但在生产环境下功能失效
+
+如果你有修改了框架核心的JS文件或者修改了核心样式文件，需要使用命令重新压缩打包JS和CSS后才会在生产环境下生效，具体请参考：https://doc.fastadmin.net/docs/command.html#一键压缩打包-3 
+
+## 为什么在外网访问后台速度非常慢
+
+如果你在外网开启了调试模式，因为在调试模式下加载的文件非常多，访问速度会非常慢，请在外网或生产环境下关闭调试模式。如果有更高的响应要求，建议采用CDN部署静态资源。部署方式请参考：[#如何将静态资源采用CDN方式部署到第三方云存储-13](#如何将静态资源采用CDN方式部署到第三方云存储-13) 
+
+## 如何启用二级菜单功能
+
+FastAdmin从`1.0.0.20180513_beta`版本开始新增了二级菜单功能，开发者可以很方便的在配置文件中修改是否开启二级菜单功能，找到`application/config.php`文件最下方有个`multiplenav`配置，默认是`false`，如果需要启用，请将`multiplenav`置为`true`即可。
+
+如果启用了二级菜单后，菜单规则中的第一级将作为一级菜单显示在顶部。我们可以在`权限管理`->`菜单规则`中额外添加一级菜单，然后再重新规划我们的菜单。
+
+## 如何启用后台登录验证码功能
+
+FastAdmin中的后台登录验证功能默认是关闭的，如果需要启用请修改`application/config.php`文件最下方的`login_captcha`，修改为`true`即可。
+
+## 如何在控制器或模型中获取当前登录的管理员或登录用户信息
+
+在FastAdmin所提供的基类`Frontend`、`Backend`、`Api`中都有提供获取当前管理员或登录用户的信息方法
+
+在后台管理的控制器中可以通过`$this->auth->id`来获取管理员ID，`$this->auth->字段名`获取管理员的其它信息，如果需要在后台的Model中获取当前登录的管理员ID，可以通过两种方式获取：
+
+第一种，使用Session来获取管理员信息
+
+```php
+\think\Session::get('admin');
+```
+
+第二种，使用单例方法来获取
+
+```php
+$auth = \app\admin\library\Auth::instance();
+```
+
+在前台或API的控制器中可以通过`$this->auth->id`来获取当前登录会员的ID，`$this->auth->字段员`获取登录会员的其它信息，如果需要在前台的Model中获取当前登录的用户信息，可以能和以下的方式获取：
+
+```php
+//获取Auth对象
+$auth = \app\common\library\Auth::install();
+//获取会员模型
+$user = $auth->getUser();
+```
+
+
 
 ## 安装后提示控制器不存在:E或控制器不存在:N
 
@@ -236,7 +283,7 @@ FastAdmin建议运行在PHP5.5及以上版本，因此如果提示网络错误�
    chmod a+w ./runtime/ -R
    ```
 
-2. 其次就是可能你的目录绑定到public后，open_basedir限制了访问父目录，可以配置下open_basedir，添加上级目录即可，通常情况下Linux需要在配置文件中追加的代码是：
+2. 其次就是可能你的目录绑定到public后，`open_basedir`限制了访问父目录，可以配置下`open_basedir`，添加上级目录即可，通常情况下Linux需要在配置文件中追加的代码是：
 
    ```
    fastcgi_param PHP_ADMIN_VALUE "open_basedir=/yourpath/fastadmin/:/tmp/:/proc/";
@@ -259,4 +306,7 @@ FastAdmin可以将静态的资源部署到又拍云、七牛云或阿里OSS，�
 2. 修改`application/config.php`中`__CDN__`的值为你CDN的地址
 
 请将你的静态资源`public/assets`文件夹上传至你的CDN空间中去。
+
+如果采用了静态资源部署CDN，在后台`插件管理`中对插件执行安装、禁用、启用、卸载后都需要将`public/assets/addons/`目录和`public/assets/js/addons.js`文件再次同步更新到CDN。
+
 如果你需要将上传的文件直传至又拍云、七牛云或阿里OSS，请在插件管理中下载对应第三方云存储的插件并配置好即可。

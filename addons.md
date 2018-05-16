@@ -237,5 +237,5 @@ FastAdmin插件分为在线安装和命令行安装，在线安装可以直接�
 
 目前FastAdmin官方已经上线插件市场，开发者可以在插件市场下载插件进行离线安装，地址：https://www.fastadmin.net/store.html
 
-如果你开发了一款插件需要上架到FastAdmin的插件市场，可以通过在线发布插件的形式分享或售卖你的插件，请点击https://www.fastadmin.net/postaddon.html查看
+如果你开发了一款插件需要上架到FastAdmin的插件市场，可以通过在线发布插件的形式分享或售卖你的插件，请点击https://www.fastadmin.net/postaddon.html 查看
 
